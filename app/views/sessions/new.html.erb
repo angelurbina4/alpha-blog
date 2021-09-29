@@ -1,0 +1,35 @@
+<h1 class="text-center mt-4">Login for Alpha Blog</h1>
+
+<div class="container">
+  <div class="row row justify-content-md-center">
+    <div class="col-10">
+      <%= form_with(scope: :session, url: login_path, class: "shadow p-3 mb-3 bg-success rounded", local: true) do |f| %>
+
+        <div class="form-group row">
+          <%= f.label :email, class: "col-2 col-form-label text-light" %>
+          <div class="col-10 mt-3">
+            <%= f.email_field :email, class: "form-control shadow rounded", placeholder: "Enter your email address" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+        <%= f.label :password, class: "col-2 col-form-label text-light" %>
+        <div class="col-10 mt-3">
+          <%= f.password_field :password, class: "form-control shadow rounded", placeholder: "Enter your password" %>
+        </div>
+      </div>
+
+        <div class="form-group row justify-content-md-center">
+          <div class="col-2 mt-3">
+            <%= f.submit "log in", class: "btn btn-outline-light btn-lg" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="row row justify-content-md-center">
+      <div class="col-9 mb-3">
+        <%= link_to '[ Return to articles listing ]', articles_path, class: "text-success"%> 
+      </div>
+    </div>
+  </div>
+</div>
